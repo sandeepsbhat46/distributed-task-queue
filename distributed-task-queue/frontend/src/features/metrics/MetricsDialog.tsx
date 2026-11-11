@@ -1,5 +1,0 @@
-import { RefreshCw, X } from 'lucide-react';
-
-export function MetricsDialog({ text, onRefresh, onClose }: { text: string; onRefresh: () => void; onClose: () => void }) {
-  return <div className="modal-backdrop" onMouseDown={(event) => event.target === event.currentTarget && onClose()}><section className="task-modal metrics-modal" role="dialog" aria-modal="true" aria-label="Prometheus metrics"><div className="modal-heading"><div><span className="modal-kicker">LIVE ENDPOINT · /METRICS</span><h2>Prometheus metrics</h2></div><button className="icon-button" title="Close" onClick={onClose}><X size={18} /></button></div><pre className="metrics-output">{text || 'No metrics returned.'}</pre><div className="modal-actions"><button className="secondary-button" onClick={onRefresh}><RefreshCw size={14} /> Refresh</button><button className="primary-button" onClick={onClose}>Done</button></div></section></div>;
-}

@@ -1,8 +1,0 @@
-import { RefreshCw, X } from 'lucide-react';
-import { pretty } from '../../../lib/format';
-import type { Task } from '../../../types';
-import { StatusBadge } from '../../../components/tasks/StatusBadge';
-
-export function TaskDetailsDialog({ task, onClose, onRetry }: { task: Task; onClose: () => void; onRetry: () => void }) {
-  return <div className="modal-backdrop" onMouseDown={(event) => event.target === event.currentTarget && onClose()}><section className="task-modal detail-modal" role="dialog" aria-modal="true" aria-label="Task details"><div className="modal-heading"><div><span className="modal-kicker">TASK · {task.id.slice(0, 13)}</span><h2>{pretty(task.name)}</h2></div><button className="icon-button" title="Close" onClick={onClose}><X size={18} /></button></div><div className="detail-summary"><StatusBadge status={task.status} /><span>Attempt {task.attempts} of {task.maxAttempts}</span><span>Priority {task.priority}</span></div>{task.error && <p className="detail-error">{task.error}</p>}<label className="form-label">Payload<pre className="detail-json">{JSON.stringify(task.payload, null, 2)}</pre></label>{task.result !== undefined && <label className="form-label">Result<pre className="detail-json">{JSON.stringify(task.result, null, 2)}</pre></label>}<div className="modal-actions"><button className="secondary-button" onClick={onClose}>Close</button>{task.status === 'failed' && <button className="primary-button" onClick={onRetry}><RefreshCw size={14} /> Retry task</button>}</div></section></div>;
-}
