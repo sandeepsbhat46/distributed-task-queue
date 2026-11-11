@@ -1,0 +1,14 @@
+.schedule-panel{width:100%;text-align:left;font-family:inherit}
+.schedule-panel>svg{margin-left:auto;color:#929b94;flex:none}
+.schedule-summary{flex:1}
+.schedule-modal{max-height:calc(100vh - 32px);overflow-y:auto}
+.schedule-list{display:grid;gap:6px;margin:-5px 0 17px}
+.schedule-row{min-height:44px;padding:6px 7px;display:flex;align-items:center;gap:9px;border:1px solid #edf0eb;border-radius:4px}
+.schedule-row-icon{width:27px;height:27px;display:grid;place-items:center;border-radius:4px;background:#f5f1e7;color:#a98d50}
+.schedule-row-copy{display:grid;gap:3px;flex:1;min-width:0}
+.schedule-row-copy b{overflow:hidden;text-overflow:ellipsis;color:#485249;font-size:10px;font-weight:600;white-space:nowrap}
+.schedule-row-copy code{color:#8e978e;font:9px var(--mono)}
+.schedule-empty{margin:0;padding:13px 10px;border:1px dashed #e1e7df;border-radius:4px;color:#929b92;text-align:center;font-size:10px}
+.schedule-form-title{padding-top:14px;border-top:1px solid #edf0eb;color:#485249;font:700 11px var(--display)}
+.schedule-modal .form-label small{margin:0;color:#9aa39a;font:9px var(--mono)}
+.schedule-modal .modal-actions .primary-button:disabled{opacity:.65;cursor:wait}
